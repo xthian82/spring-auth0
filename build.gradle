@@ -11,7 +11,6 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 version = '0.0.1-SNAPSHOT'
@@ -22,11 +21,11 @@ repositories {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
+	compileOnly("org.projectlombok:lombok:1.16.20")
+
+	compile("org.springframework.boot:spring-boot-starter")
 	compile("org.springframework.boot:spring-boot-starter-web")
-	compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-security")
-	compile("io.jsonwebtoken:jjwt:0.7.0")
+	compile("com.auth0:auth0-spring-security-api:1.0.0-rc.3")
 	compile("org.hsqldb:hsqldb")
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
